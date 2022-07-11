@@ -9,11 +9,11 @@ import UIKit
 
 public extension UITableViewCell {
     
-    static var nib  : UINib{
-        return UINib(nibName: reusedId, bundle: nil)
+    static func nib(bundle: Bundle? = nil) -> UINib {
+        return UINib(nibName: identifire, bundle: bundle)
     }
     
-    static var reusedId : String{
+    static var identifire : String{
         return String(describing: self)
     }
 }

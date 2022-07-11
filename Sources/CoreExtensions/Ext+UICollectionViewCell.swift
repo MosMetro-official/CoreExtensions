@@ -7,10 +7,10 @@
 
 import UIKit
 
-extension UICollectionViewCell {
+public extension UICollectionViewCell {
     
-    static var nib : UINib{
-        return UINib(nibName: identifire, bundle: nil)
+    static func nib(bundle: Bundle? = nil) -> UINib {
+        return UINib(nibName: identifire, bundle: bundle)
     }
     
     static var identifire : String{

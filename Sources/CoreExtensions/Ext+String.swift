@@ -40,9 +40,7 @@ public extension String {
         return prefix(1).capitalized + dropFirst()
     }
     
-    mutating func capitalizeFirstLetter() {
-        self = self.capitalizingFirstLetter()
-    }
+   
     
     func matches(_ regex: String) -> Bool {
         return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil

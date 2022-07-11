@@ -7,9 +7,9 @@
 
 import UIKit
 
-typealias EdgeClosure = (_ view: UIView, _ superview: UIView) -> ([NSLayoutConstraint])
+public typealias EdgeClosure = (_ view: UIView, _ superview: UIView) -> ([NSLayoutConstraint])
 
-enum Corners {
+public enum Corners {
     case all
     case top
     case bottom
@@ -35,7 +35,7 @@ extension UIView {
       - parameters:
         - none
      */
-    static func loadFromNib() -> Self {
+    public static func loadFromNib() -> Self {
         let bundle = Bundle(for: self)
         let nib = UINib(nibName: String(describing: self), bundle: bundle)
         //  swiftlint:disable force_cast
@@ -48,7 +48,7 @@ extension UIView {
      - parameters:
         - on: View on which view schould be fixed
      */
-    func pin(on superview: UIView, _ callback: EdgeClosure) {
+    public func pin(on superview: UIView, _ callback: EdgeClosure) {
         superview.addSubview(self)
         self.translatesAutoresizingMaskIntoConstraints = false
         callback(self, superview).forEach {
@@ -77,7 +77,7 @@ extension UIView {
             * topRightBottomLeft
         - radius: The **CGFloat** value to be set
      */
-    func roundCorners(_ corners: Corners, radius: CGFloat) {
+    public func roundCorners(_ corners: Corners, radius: CGFloat) {
         var cornerMasks = [CACornerMask]()
         
         // Top left corner

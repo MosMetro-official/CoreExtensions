@@ -34,25 +34,21 @@ extension UIColor {
      The function recycles the HEX string and returns a UIColor value
      - Parameters: hex : HEX string - a value of a color
      */
-    static func hexStringToUIColor(hex:String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+    public static func hexStringToUIColor(hex:String, alpha: CGFloat = 1.0) -> UIColor {
+        var hexFormatted: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
+        if hexFormatted.hasPrefix("#") {
+            hexFormatted = String(hexFormatted.dropFirst())
         }
         
-        if ((cString.count) != 6) {
-            return UIColor.gray
-        }
+        assert(hexFormatted.count == 6, "Invalid hex code used.")
         
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
+        var rgbValue: UInt64 = 0
+        Scanner(string: hexFormatted).scanHexInt64(&rgbValue)
         
-        return UIColor(
-            red: (CGFloat((rgbValue & 0xFF0000) >> 16))  / 255.0,
-            green: (CGFloat((rgbValue & 0x00FF00) >> 8)) / 255.0,
-            blue: (CGFloat(rgbValue & 0x0000FF)) / 255.0,
-            alpha: CGFloat(1.0)
-        )
+        return .init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+                     green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+                     blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+                     alpha: alpha)
     }
 }
