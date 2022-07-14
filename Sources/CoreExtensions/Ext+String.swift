@@ -5,7 +5,7 @@
 //  Created by polykuzin on 01/07/2022.
 //
 
-import Foundation
+import UIKit
 
 public extension String {
     
@@ -13,7 +13,7 @@ public extension String {
         return htmlToAttributedString?.string ?? ""
     }
     
-    public var htmlToAttributedString : NSAttributedString? {
+    var htmlToAttributedString : NSAttributedString? {
         guard let data = data(using: .utf8) else { return NSAttributedString() }
         do {
             return try NSAttributedString(
@@ -39,8 +39,6 @@ public extension String {
     func capitalizingFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()
     }
-    
-   
     
     func matches(_ regex: String) -> Bool {
         return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil

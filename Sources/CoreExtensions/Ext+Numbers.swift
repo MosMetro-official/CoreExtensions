@@ -9,7 +9,6 @@ import UIKit
 
 extension Int {
     
-    // MARK: - Convert to string
     /**
      Func converted int to string with specific style
      */
@@ -41,10 +40,7 @@ extension TimeInterval  {
     }
     
     func stringFromTimeInterval() -> String {
-        
         let time = NSInteger(self)
-        
-        let ms = Int((self.truncatingRemainder(dividingBy: 1)) * 1000)
         let seconds = time % 60
         let minutes = (time / 60) % 60
         

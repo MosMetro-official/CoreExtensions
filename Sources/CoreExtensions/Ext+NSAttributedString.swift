@@ -6,7 +6,7 @@
 //  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension NSAttributedString {
 
