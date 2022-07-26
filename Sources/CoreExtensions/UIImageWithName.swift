@@ -11,7 +11,7 @@ import UIKit
 
 public class UIImageWithName : UIImage {
 
-    convenience init(_ name: String) {
+    public convenience init(_ name: String) {
         if
             let image = UIImage(named: name),
             let cgImage = image.cgImage
