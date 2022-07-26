@@ -18,7 +18,7 @@ public class UIImageWithName : UIImage {
         {
             self.init(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
         } else {
-            let image = UIImage()
+            let image = UIImage(named: "placeholder_image", in: .module, compatibleWith: nil)!
             let cgImage = image.cgImage
             self.init(cgImage: cgImage!)
         }
