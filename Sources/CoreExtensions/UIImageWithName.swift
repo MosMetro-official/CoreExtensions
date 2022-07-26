@@ -9,7 +9,7 @@
 
 import UIKit
 
-class UIImageWithName : UIImage {
+public class UIImageWithName : UIImage {
 
     convenience init(_ name: String) {
         if
