@@ -37,9 +37,9 @@ public extension UIView {
      */
     public static func loadFromNib(_ bundle: Bundle? = nil) -> Self {
         let nib = UINib(nibName: String(describing: self), bundle: bundle)
-        //  swiftlint:disable force_cast
+		//  swiftlint:disable force_cast
         return nib.instantiate(withOwner: nil, options: nil).first as! Self
-        //  swiftlint:enable force_cast
+		//  swiftlint:disable force_cast
     }
     
     /**

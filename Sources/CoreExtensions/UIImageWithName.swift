@@ -9,16 +9,16 @@
 
 import UIKit
 
-class UIImageWithName : UIImage {
+public class UIImageWithName : UIImage {
 
-    convenience init(_ name: String) {
+    public convenience init(_ name: String) {
         if
             let image = UIImage(named: name),
             let cgImage = image.cgImage
         {
             self.init(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
         } else {
-            let image = UIImage()
+            let image = UIImage(named: "placeholder_image", in: .module, compatibleWith: nil)!
             let cgImage = image.cgImage
             self.init(cgImage: cgImage!)
         }

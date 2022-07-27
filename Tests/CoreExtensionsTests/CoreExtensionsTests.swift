@@ -6,6 +6,6 @@ final class CoreExtensionsTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(CoreExtensions().text, "Hello, World!")
+        XCTAssertEqual(CoreExtensions.getVersion(), "0.0.1")
     }
 }

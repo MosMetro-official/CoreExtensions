@@ -75,4 +75,33 @@ public extension String {
         attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: color,  NSAttributedString.Key.font: font], range: NSMakeRange(0, attributedString.length))
         return attributedString
     }
+    
+    /**
+     Method to format phone number to specific mask
+     */
+    func format(with mask: String) -> String {
+        let numbers = self.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result = ""
+        var index = numbers.startIndex
+        for ch in mask where index < numbers.endIndex {
+            if ch == "X" {
+                result.append(numbers[index])
+                index = numbers.index(after: index)
+            } else {
+                result.append(ch)
+            }
+        }
+        return result
+    }
+    
+    /**
+     Method to validate phone number
+     */
+    func validatePhoneNumber() -> Bool {
+        let formattedPhone = self.format(with: "+X (XXX) XXX-XXXX")
+        let PHONE_REGEX = #"^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$"#
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+        let result = phoneTest.evaluate(with: formattedPhone)
+        return result
+    }
 }

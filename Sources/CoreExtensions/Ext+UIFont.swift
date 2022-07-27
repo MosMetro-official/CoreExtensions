@@ -1,17 +1,15 @@
 //
-//  UIFont + Register.swift
-//  CoreExtensions
+//  File.swift
+//  
 //
-//  Created by guseyn on 11.07.2022.
+//  Created by Слава Платонов on 10.03.2022.
 //
 
-import Foundation
+import UIKit
 
 extension UIFont {
-    /// Method for register fonts from package
-    @discardableResult
+    
     open class func registerFont(bundle: Bundle, fontName: String, fontExtension: String) -> Bool {
-        
         guard let fontURL = bundle.url(forResource: fontName, withExtension: fontExtension) else {
             fatalError("Couldn't find font \(fontName)")
         }
