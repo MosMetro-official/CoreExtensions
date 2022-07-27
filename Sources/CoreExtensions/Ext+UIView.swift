@@ -27,16 +27,15 @@ public enum Corners {
     case topRightBottomLeft
 }
 
-extension UIView {
+public extension UIView {
     
     /**
      Load the view from a nib file called with the name of the class;
       - note: The first object of the nib file **must** be of the matching class
       - parameters:
-        - none
+        - Bundle - name of _YOUR_MODULE_BUNDLE_
      */
-    public static func loadFromNib() -> Self {
-        let bundle = Bundle(for: self)
+    public static func loadFromNib(_ bundle: Bundle? = nil) -> Self {
         let nib = UINib(nibName: String(describing: self), bundle: bundle)
         //  swiftlint:disable force_cast
         return nib.instantiate(withOwner: nil, options: nil).first as! Self
@@ -169,7 +168,7 @@ extension UIView {
     }
 }
 
-extension UIView {
+public extension UIView {
     
     public func setShadow() {
         self.layer.shadowColor   = UIColor.black.cgColor

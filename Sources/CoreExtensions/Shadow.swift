@@ -9,9 +9,9 @@
 import UIKit
 
 public struct Shadow {
-    let offset : CGSize
-    let blur   : CGFloat
-    let color  : UIColor
+    public let offset : CGSize
+    public let blur : CGFloat
+    public let color : UIColor
     
     public init(offset: CGSize, blur: CGFloat, color: UIColor) {
         self.offset = offset

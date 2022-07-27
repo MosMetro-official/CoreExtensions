@@ -9,7 +9,7 @@ import UIKit
 
 public extension UICollectionViewCell {
     
-    static func nib(bundle: Bundle? = nil) -> UINib {
+    static func nib(_ bundle: Bundle? = nil) -> UINib {
         return UINib(nibName: identifire, bundle: bundle)
     }
     
