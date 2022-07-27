@@ -1,16 +1,16 @@
 //
-//  UIDevice+Extentions.swift
-//  MosmetroNew
+//  Ext+UIDevice.swift
+//  
 //
 //  Created by Павел Кузин on 08.12.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
+//
 //
 
 import UIKit
 
 public extension UIDevice {
 
-    static let modelName: String = {
+    static let modelName : String = {
         var systemInfo = utsname()
         uname(&systemInfo)
         let machineMirror = Mirror(reflecting: systemInfo.machine)

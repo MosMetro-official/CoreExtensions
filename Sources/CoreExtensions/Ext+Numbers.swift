@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension Int {
+public extension Int {
     
     /**
      Func converted int to string with specific style
@@ -22,7 +22,7 @@ extension Int {
     
 }
 
-extension TimeInterval  {
+public extension TimeInterval  {
     
     struct DateComponents {
         
@@ -48,7 +48,7 @@ extension TimeInterval  {
     }
 }
 
-extension Double {
+public extension Double {
     
     func roundToDecimal(_ fractionDigits: Int) -> Double {
         let multiplier = pow(10, Double(fractionDigits))

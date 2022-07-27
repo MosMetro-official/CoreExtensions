@@ -1,5 +1,5 @@
 //
-//  UILabel+Extentions.swift
+//  Ext+UILabel.swift
 //  MosmetroNew
 //
 //  Created by Павел Кузин on 24.11.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UILabel {
+public extension UILabel {
     
     /**
     Sets space between lines in UILabel

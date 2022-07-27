@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIApplication {
+public extension UIApplication {
     
     var keyWindow : UIWindow? {
         // Get connected scenes

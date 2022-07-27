@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Ext+UIFont.swift
 //  
 //
 //  Created by Слава Платонов on 10.03.2022.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-extension UIFont {
+public extension UIFont {
     
-    open class func registerFont(bundle: Bundle, fontName: String, fontExtension: String) -> Bool {
+    class func registerFont(bundle: Bundle, fontName: String, fontExtension: String) -> Bool {
         guard let fontURL = bundle.url(forResource: fontName, withExtension: fontExtension) else {
             fatalError("Couldn't find font \(fontName)")
         }

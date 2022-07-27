@@ -1,5 +1,5 @@
 //
-//  UIView+Extentions.swift
+//  Ext+UIView.swift
 //
 //
 //  Created by polykuzin on 29/06/2022.
@@ -35,7 +35,7 @@ public extension UIView {
       - parameters:
         - Bundle - name of _YOUR_MODULE_BUNDLE_
      */
-    public static func loadFromNib(_ bundle: Bundle? = nil) -> Self {
+    static func loadFromNib(_ bundle: Bundle? = nil) -> Self {
         let nib = UINib(nibName: String(describing: self), bundle: bundle)
 		//  swiftlint:disable force_cast
         return nib.instantiate(withOwner: nil, options: nil).first as! Self
@@ -47,7 +47,7 @@ public extension UIView {
      - parameters:
         - on: View on which view schould be fixed
      */
-    public func pin(on superview: UIView, _ callback: EdgeClosure) {
+    func pin(on superview: UIView, _ callback: EdgeClosure) {
         superview.addSubview(self)
         self.translatesAutoresizingMaskIntoConstraints = false
         callback(self, superview).forEach {
@@ -76,7 +76,7 @@ public extension UIView {
             * topRightBottomLeft
         - radius: The **CGFloat** value to be set
      */
-    public func roundCorners(_ corners: Corners, radius: CGFloat) {
+    func roundCorners(_ corners: Corners, radius: CGFloat) {
         var cornerMasks = [CACornerMask]()
         
         // Top left corner
@@ -170,7 +170,7 @@ public extension UIView {
 
 public extension UIView {
     
-    public func setShadow() {
+    func setShadow() {
         self.layer.shadowColor   = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.1
         self.layer.shadowOffset  = CGSize(width: 0, height: 20)

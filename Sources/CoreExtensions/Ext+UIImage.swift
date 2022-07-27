@@ -7,7 +7,8 @@
 
 import UIKit
 
-extension UIImage {
+public extension UIImage {
+    
     /**
      This function creates a 9-part template image used to add a shadow effect around a `UIVisualEffectView`.
      
@@ -18,7 +19,7 @@ extension UIImage {
        - **shouldDrawCapInsets**: if `true`, debug lines are added to the image to help visualize the 9-part image.
      - Returns: a 9-part template image.
      */
-    public static func resizableShadowImage(
+    static func resizableShadowImage(
         withSideLength sideLength: CGFloat,
         cornerRadius: CGFloat,
         shadow: Shadow,

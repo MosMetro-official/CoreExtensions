@@ -1,5 +1,5 @@
 //
-//  UIViewController+Extentions.swift
+//  Ext+UIViewController.swift
 //  MosmetroNew
 //
 //  Created by Павел Кузин on 07.12.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))

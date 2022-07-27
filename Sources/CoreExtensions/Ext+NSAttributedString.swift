@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NSAttributedString {
+public extension NSAttributedString {
 
     func height(containerWidth: CGFloat) -> CGFloat {
 
@@ -26,7 +26,7 @@ extension NSAttributedString {
     }
 }
 
-extension NSMutableAttributedString {
+public extension NSMutableAttributedString {
     
     func setFontFace(font: UIFont, color: UIColor? = nil) {
         beginEditing()
