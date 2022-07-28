@@ -21,6 +21,7 @@ Pod::Spec.new do |spec|
     spec.ios.deployment_target = "13.0"
     
     spec.source       = { :git => "https://github.com/MosMetro-official/CoreExtensions", :tag => "#{spec.version}" }
+    spec.resource_bundle = { 'CoreExtensions' => 'Sources/CoreExtensions/**/*.{png,jpeg,jpg,pdf,xcassets}' }
     
     spec.source_files  = "Sources/CoreExtensions/**/*.{swift}"
     spec.exclude_files = "Tests/CoreExtensions/**/*"
