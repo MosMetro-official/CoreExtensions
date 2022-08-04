@@ -11,9 +11,9 @@ import UIKit
 
 public class UIImageWithName : UIImage {
 
-    public convenience init(_ name: String) {
+	public convenience init(_ name: String, in bundle: Bundle? = nil, with configuration: UIImage.Configuration? = nil) {
         if
-            let image = UIImage(named: name),
+            let image = UIImage(named: name,in: bundle, with: configuration),
             let cgImage = image.cgImage
         {
             self.init(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
